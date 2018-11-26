@@ -34,6 +34,7 @@ public class Main extends javax.swing.JFrame {
         lbValor = new javax.swing.JLabel();
         lbValor2 = new javax.swing.JLabel();
         textValor2 = new javax.swing.JTextField();
+        lb1 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -139,6 +140,8 @@ public class Main extends javax.swing.JFrame {
 
         lbValor2.setText("Informer algum valor");
 
+        lb1.setText("SELECIONE UMA CONTA");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -182,7 +185,11 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnEP)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnJP)))))
+                                .addComponent(btnJP))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(lb1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -218,7 +225,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(btnRP)
                     .addComponent(btnDP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                .addComponent(lb1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -261,7 +270,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCPPActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        DefaultTableModel contasBanco = (DefaultTableModel)tabelaContas.getModel();
         btnRC.setVisible(false);
         btnDC.setVisible(false);
         btnEC.setVisible(false);
@@ -273,6 +281,7 @@ public class Main extends javax.swing.JFrame {
         lbValor.setVisible(false);
         textValor2.setVisible(false);
         lbValor2.setVisible(false);
+        lb1.setVisible(false);
         //tabelaContas.setVisible(false);
         //jTable1.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
@@ -310,6 +319,7 @@ public class Main extends javax.swing.JFrame {
         lbValor.setVisible(true);
         textValor2.setVisible(false);
         lbValor2.setVisible(false);
+        lb1.setVisible(true);
         //tabelaContas.setVisible(true);
         //jTable1.setVisible(false);
     }//GEN-LAST:event_btnMostrarCActionPerformed
@@ -326,6 +336,7 @@ public class Main extends javax.swing.JFrame {
         lbValor.setVisible(false);
         textValor2.setVisible(true);
         lbValor2.setVisible(true);
+        lb1.setVisible(true);
         //tabelaContas.setVisible(false);
         //jTable1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -484,6 +495,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel lb1;
     private javax.swing.JLabel lbValor;
     private javax.swing.JLabel lbValor2;
     private javax.swing.JTable tabelaContas;
