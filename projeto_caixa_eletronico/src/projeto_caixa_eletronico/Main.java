@@ -244,6 +244,9 @@ public class Main extends javax.swing.JFrame {
         String id = null;
         String saldo = null;
         id = JOptionPane.showInputDialog("Informer o ID");
+        if(id.isEmpty()){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE DEIXA O ID VAZIO");
+        }else{
         saldo = JOptionPane.showInputDialog("Informer o seu SALDO");
         double num1 = Double.parseDouble(saldo);
         banco b = new banco();        
@@ -253,7 +256,8 @@ public class Main extends javax.swing.JFrame {
         b.vetor[1] = poupanca.getSaldo();
         b.vetor[2] = poupanca.getIdentificador(); 
         b.vetor[3] = "Poupança";      
-        contasBanco.addRow(b.vetor);        
+        contasBanco.addRow(b.vetor);
+        }
     }//GEN-LAST:event_btnCPPActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -278,6 +282,9 @@ public class Main extends javax.swing.JFrame {
         String id = null;
         String saldo = null;
         id = JOptionPane.showInputDialog("Informer o ID");
+        if(id.isEmpty()){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE DEIXA O ID VAZIO");
+        }else{
         saldo = JOptionPane.showInputDialog("Informer o seu SALDO");
         double num1 = Double.parseDouble(saldo);
         banco b = new banco();        
@@ -287,8 +294,8 @@ public class Main extends javax.swing.JFrame {
         b.vetor[1] = correntes.getSaldo();
         b.vetor[2] = correntes.getIdentificador(); 
         b.vetor[3] = "Corrente";      
-        //tabelaContas.add
         contasBanco.addRow(b.vetor);
+        }
     }//GEN-LAST:event_btnCCCActionPerformed
 
     private void btnMostrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarCActionPerformed
