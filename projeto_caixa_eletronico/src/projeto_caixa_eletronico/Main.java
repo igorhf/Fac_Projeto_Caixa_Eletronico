@@ -269,6 +269,8 @@ public class Main extends javax.swing.JFrame {
         lbValor.setVisible(false);
         textValor2.setVisible(false);
         lbValor2.setVisible(false);
+        //tabelaContas.setVisible(false);
+        //jTable1.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
 
     private void btnCCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCCCActionPerformed
@@ -301,6 +303,8 @@ public class Main extends javax.swing.JFrame {
         lbValor.setVisible(true);
         textValor2.setVisible(false);
         lbValor2.setVisible(false);
+        //tabelaContas.setVisible(true);
+        //jTable1.setVisible(false);
     }//GEN-LAST:event_btnMostrarCActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -315,11 +319,16 @@ public class Main extends javax.swing.JFrame {
         lbValor.setVisible(false);
         textValor2.setVisible(true);
         lbValor2.setVisible(true);
+        //tabelaContas.setVisible(false);
+        //jTable1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnDCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDCActionPerformed
         DefaultTableModel contasBanco = (DefaultTableModel)tabelaContas.getModel();
         int linha = tabelaContas.getSelectedRow();
+        if(contasBanco.getValueAt(linha, 3).toString() == "Poupança"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA POUPANÇA");
+        }else{
         if(contasBanco.getValueAt(linha, 2).toString() == "false"){
             JOptionPane.showMessageDialog(null,"ESSA CONTA FOI DESATIVADA");
         }else{
@@ -327,12 +336,16 @@ public class Main extends javax.swing.JFrame {
         double num1 = Double.parseDouble(textValor.getText());
         double saldo = num + num1;
         contasBanco.setValueAt(saldo, linha, 1);
+        }
         }
     }//GEN-LAST:event_btnDCActionPerformed
 
     private void btnRCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRCActionPerformed
         DefaultTableModel contasBanco = (DefaultTableModel)tabelaContas.getModel();
         int linha = tabelaContas.getSelectedRow();
+        if(contasBanco.getValueAt(linha, 3).toString() == "Poupança"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA POUPANÇA");
+        }else{
         if(contasBanco.getValueAt(linha, 2).toString() == "false"){
             JOptionPane.showMessageDialog(null,"ESSA CONTA FOI DESATIVADA");
         }else{
@@ -341,17 +354,25 @@ public class Main extends javax.swing.JFrame {
         double saldo = num - num1;
         contasBanco.setValueAt(saldo, linha, 1);
         }
+        }
     }//GEN-LAST:event_btnRCActionPerformed
 
     private void btnECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnECActionPerformed
-        int linha = tabelaContas.getSelectedRow();       
+        int linha = tabelaContas.getSelectedRow();
+        if(tabelaContas.getValueAt(linha, 3).toString() == "Poupança"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA POUPANÇA");
+        }else{
         boolean identificador = false;
         tabelaContas.setValueAt(identificador, linha, 2);
+        }
     }//GEN-LAST:event_btnECActionPerformed
 
     private void btnDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDPActionPerformed
         DefaultTableModel contasBanco = (DefaultTableModel)tabelaContas.getModel();
         int linha = tabelaContas.getSelectedRow();
+        if(tabelaContas.getValueAt(linha, 3).toString() == "Corrente"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA CORRENTE");
+        }else{
         if(contasBanco.getValueAt(linha, 2).toString() == "false"){
             JOptionPane.showMessageDialog(null,"ESSA CONTA FOI DESATIVADA");
         }else{
@@ -360,11 +381,15 @@ public class Main extends javax.swing.JFrame {
         double saldo = num + num1;
         contasBanco.setValueAt(saldo, linha, 1);
         }
+        }
     }//GEN-LAST:event_btnDPActionPerformed
 
     private void btnRPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRPActionPerformed
         DefaultTableModel contasBanco = (DefaultTableModel)tabelaContas.getModel();
         int linha = tabelaContas.getSelectedRow();
+        if(tabelaContas.getValueAt(linha, 3).toString() == "Corrente"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA CORRENTE");
+        }else{
         if(contasBanco.getValueAt(linha, 2).toString() == "false"){
             JOptionPane.showMessageDialog(null,"ESSA CONTA FOI DESATIVADA");
         }else{
@@ -373,17 +398,25 @@ public class Main extends javax.swing.JFrame {
         double saldo = num - num1;
         contasBanco.setValueAt(saldo, linha, 1);
         }
+        }
     }//GEN-LAST:event_btnRPActionPerformed
 
     private void btnEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEPActionPerformed
-        int linha = tabelaContas.getSelectedRow();       
+        int linha = tabelaContas.getSelectedRow(); 
+        if(tabelaContas.getValueAt(linha, 3).toString() == "Corrente"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA CORRENTE");
+        }else{
         boolean identificador = false;
         tabelaContas.setValueAt(identificador, linha, 2);
+        }
     }//GEN-LAST:event_btnEPActionPerformed
 
     private void btnJPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJPActionPerformed
         DefaultTableModel contasBanco = (DefaultTableModel)tabelaContas.getModel();
         int linha = tabelaContas.getSelectedRow();
+        if(tabelaContas.getValueAt(linha, 3).toString() == "Corrente"){
+            JOptionPane.showMessageDialog(null,"VOCÊ NÃO PODE ALTERAR CONTA CORRENTE");
+        }else{
         if(contasBanco.getValueAt(linha, 2).toString() == "false"){
             JOptionPane.showMessageDialog(null,"ESSA CONTA FOI DESATIVADA");
         }else{
@@ -391,6 +424,7 @@ public class Main extends javax.swing.JFrame {
         double num1 = Double.parseDouble(textValor2.getText());
         double saldo = num * num1;
         contasBanco.setValueAt(saldo, linha, 1);
+        }
         }
     }//GEN-LAST:event_btnJPActionPerformed
     
